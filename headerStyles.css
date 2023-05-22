@@ -1,0 +1,234 @@
+ /* Fran: https://www.w3schools.com/howto/howto_js_mobile_navbar.asp */
+ /* Style the navigation menu */
+ 
+ * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
+ /* Hur man stylar hamburgarmenyn inspirerat från: https://www.w3schools.com/howto/howto_js_mobile_navbar.asp */
+ 
+ .mobilNav {
+     overflow: hidden;
+     background-color: #2a2b2f;
+     position: relative;
+     width: 100%;
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     height: auto;
+     z-index: 1;
+     min-height: 70px;
+ }
+ /* Navigeringslänkarna i hamburgarmenyn är gömda */
+ 
+ .mobilNav #myLinks {
+     display: none;
+ }
+ 
+ .menuIcon {
+     text-align: start;
+     position: absolute;
+     top: 0;
+     left: 0;
+     margin-left: 1em;
+     cursor: pointer;
+     margin: 0;
+     margin-left: 1em;
+ }
+ /* Menyns länkar */
+ 
+ .mobilNav a {
+     color: #fff;
+     padding: 1.1em;
+     text-decoration: none;
+     font-size: 18px;
+     display: block;
+ }
+ /* Logotypen på mindre enheter */
+ 
+ .logotyp {
+     padding: 0;
+     margin: 0;
+     margin: -30px;
+ }
+ /* Behållare för mobillogotypen */
+ 
+ #mobilLogo {
+     text-align: center;
+ }
+ 
+ .mobilNav a.icon {
+     background: #2a2b2f;
+     display: block;
+     position: absolute;
+     left: 0;
+     top: 0;
+ }
+ /* Sökikon på mobil */
+ 
+ .searchIconMobil {
+     color: #fff;
+     padding: 0.1em;
+ }
+ /* Sökruta på mobil */
+ 
+ #searchProductMobil {
+     width: 90%;
+     padding: 1em;
+ }
+ /* Den sida som man är inne på visas som aktiv */
+ 
+ .active {
+     background-color: #fff;
+     color: #2a2b2f !important;
+ }
+ /* Behållare för varukorgen */
+ 
+ #varukorgContainer {
+     position: relative;
+ }
+ /* Varukorgsbilden positioneras */
+ 
+ #varukorgen img {
+     display: block;
+     position: fixed;
+     right: 20px;
+     top: 20px;
+     z-index: 3;
+     cursor: pointer;
+ }
+ /* Varukorgens innehåll är gömt per automatik */
+ 
+ #varukorgContainer #basket-holder {
+     display: none;
+ }
+ /* Varukorgen är öppnad */
+ 
+ #basket-holder {
+     background-color: #fff;
+     color: #2a2b2f;
+     padding: 1.1em;
+     text-decoration: none;
+     font-size: 18px;
+     display: block;
+     z-index: 10;
+     position: fixed;
+     right: 0;
+     top: 100px;
+     box-shadow: 2px 5px 10px #2a2b2f;
+ }
+ /* Navigeringsmeny för större enheter */
+ 
+ .datorHeader {
+     display: grid;
+     grid-template-columns: 1fr 4fr 1fr;
+     grid-template-areas: "logotyp search varukorg" "logotyp nav varukorg";
+     justify-items: center;
+     align-items: center;
+     background-color: #fff;
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     width: 100%;
+     height: auto;
+     z-index: 1;
+ }
+ 
+ #datorNav {
+     grid-area: nav;
+ }
+ 
+ #datorNav ul {
+     margin: 0;
+     padding: 0;
+ }
+ 
+ #datorNav ul li {
+     display: inline-block;
+     padding-bottom: 0.2em;
+ }
+ 
+ #datorNav a {
+     color: #2a2b2f;
+     text-align: center;
+     text-decoration: none;
+     font-size: 20px;
+     padding: 0.55em;
+ }
+ /* Klassen för sidan som är aktiv */
+ 
+ .navActive {
+     background-color: #fff;
+     color: #2a2b2f !important;
+     border-bottom: 3px solid #777;
+ }
+ 
+ #datorNav a:hover {
+     color: #c1c1c1;
+     border-bottom: 3px solid #c1c1c1;
+ }
+ 
+ .datorSearch {
+     grid-area: search;
+ }
+ /* Sökrutans linjer är borta. Kod från https://www.w3docs.com/tools/code-editor/2998 */
+ 
+ .datorSearch input {
+     border-top-style: hidden;
+     border-right-style: hidden;
+     border-left-style: hidden;
+     border-bottom-style: groove;
+     border-bottom-color: #2a2b2f;
+     padding: 0.2em 1em;
+ }
+ /* Sökrutan blir inte större när man klickar i den */
+ 
+ .datorSearch input:focus {
+     outline: none;
+ }
+ /* Ikonen för sökrutan */
+ 
+ .searchIcon {
+     color: #2a2b2f;
+ }
+ 
+ #datorLogo {
+     grid-area: logotyp;
+     margin-bottom: -1em;
+ }
+ 
+ #datorVarukorg img {
+     background: #fff;
+     display: block;
+     grid-area: varukorg;
+ }
+ /* Navigeringsmenyn för större enheter är gömd för mindre enheter och finjustering av varukorgens placering */
+ 
+ @media screen and (max-width: 840px) {
+     .datorHeader {
+         display: none;
+     }
+     #basket-holder {
+         right: 0;
+         top: 70px;
+         left: 0;
+     }
+ }
+ /* Hamburgarmenyn är gömd för större enheter och finjustering av varukorgens placering */
+ 
+ @media screen and (min-width: 841px) {
+     .mobilNav {
+         display: none;
+     }
+     #varukorgen img {
+         right: 45px;
+         top: 32px;
+     }
+     #basket-holder {
+         right: 0;
+         top: 90px;
+     }
+ }

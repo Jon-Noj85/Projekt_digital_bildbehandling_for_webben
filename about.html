@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vingåker Bruk | Om</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="headerStyles.css">
+    <!-- Länkar för ikoner för Lightbox och annat samt css-filer för Lightbox. " -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/images/close.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/images/loading.gif" type="image/gif">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/images/next.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/images/prev.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+</head>
+
+<body>
+    <!-- Webbplatsens header -->
+    <header>
+        <!-- Header för mindre enheter -->
+        <div class="mobilNav">
+            <div id="mobilLogo">
+                <a href="index.html" title="Startsidan"><img src="Bilder/logotypMobil.svg" alt="Vingåker Bruk logo" width="80" height="60" class="logotyp"></a>
+            </div>
+            <!-- Hamburgarmenyns länkar (gömda per automatik) Källa: w3scools, "Hot TO - Mobile Navigation Menu", https://www.w3schools.com/howto/howto_js_mobile_navbar.asp Hämtad 2022-02-05-->
+            <nav id="myLinks">
+                <div class="datorSearch">
+                    <input type="text" placeholder="Sök produkt" id="searchProductMobil">
+                    <label for="searchProductMobil"><i class="fa searchIconMobil">&#xf002;</i></label>
+                </div>
+                <a href="index.html">Hem</a>
+                <a href="products.html">Produkter</a>
+                <a href="about.html" class="active">Om Vingåker Bruk</a>
+                <a href="about.html#kontakt">Kontakt</a>
+            </nav>
+            <!-- Ikon för att öppna och stänga hamburger menu -->
+            <img src="Bilder/burgerIcon.svg" class="menuIcon" onclick="openMenu()" alt="Öppna meny" width="30" height="73">
+        </div>
+        <!-- Varukorgen (samma för alla enheter) -->
+        <div id="varukorgContainer">
+            <div id="varukorgen">
+                <!-- Ikon för att öppna och stänga varukorgen -->
+                <picture>
+                    <source media="(min-width: 841px)" srcset="Bilder/varukorgSvart.svg">
+                    <img src="Bilder/varukorgMobil.svg" onclick="openCart()" title="Gå till varukorgen" alt="Varukorgen" width="30" height="30">
+                </picture>
+                <!--<img src="Bilder/varukorgMobil.svg" onclick="openCart()" title="Varukorgen" alt="Varukorgen" width="30" height="30">-->
+            </div>
+            <!-- Det som ligger i varukorgen -->
+            <div id="basket-holder">
+                <h2 class="varukorgH2">Din varukorg</h2>
+                <ul id="basket">
+                    <li>Varukorgen är tom</li>
+                </ul>
+                <!-- Länk för att komma till kassan -->
+                <a href="checkout.html" class="purchaseButton" title="Fortsätt till kassan">Fortsätt till kassan</a>
+                <button onclick="emptyBasket()" class="emptyButton">Töm varukorgen</button>
+            </div>
+        </div>
+        <!-- Header för större enheter -->
+        <div class="datorHeader">
+            <div id="datorLogo">
+                <a href="index.html" title="Startsidan"><img src="Bilder/logotyp.svg" alt="Vingåker Bruk logo" width="150" height="100"></a>
+            </div>
+            <div class="datorSearch">
+                <input type="text" placeholder="Sök produkt" id="searchProduct">
+                <label for="searchProduct"><i class="fa searchIcon">&#xf002;</i></label>
+            </div>
+            <!-- Meny för större enheter -->
+            <nav id="datorNav">
+                <ul>
+                    <li><a href="index.html">Hem</a></li>
+                    <li><a href="products.html">Produkter</a></li>
+                    <li><a href="about.html" class="navActive">Om Vingåker Bruk</a></li>
+                    <li><a href="about.html#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section>
+            <!-- Första bilden med textruta med info om projektet -->
+            <div class="bakgrundsBild">
+                <picture>
+                    <source media="(min-width: 701px) " srcset="Bilder/background/sheepBg1920x700px.jpg">
+                    <img src="Bilder/background/sheepBg700x500px.jpg" alt="Vingåker Bruk">
+                </picture>
+                <article class="centerText">
+                    <h1 class="heroH1">Vingåker Bruk</h1>
+                    <picture>
+                        <source media="(min-width: 701px) " srcset="Bilder/vd240x300px.png">
+                        <img src="Bilder/vd120x150px.png" alt="">
+                    </picture>
+                    <p>Jag är bosatt i Uppsala så det kändes kul att göra ett projekt som anspelar på gamla Ekeby Bruk som låg mitt i staden.</p>
+                    <p>"Webbutveckling är den perfekta kombon av kreativitet och teknik!"</p>
+                    <p>Jonna Paixão, webbutvecklare & VD för Vingåker Bruk</p>
+                </article>
+            </div>
+        </section>
+        <section>
+            <!-- Andra bilden med textruta med info om projektet -->
+            <div class="bakgrundsBild">
+                <picture>
+                    <source media="(min-width: 701px) " srcset="Bilder/background/bodBg1920x650px.jpg">
+                    <img src="Bilder/background/bodBg700x450px.jpg" alt="">
+                </picture>
+                <article class="leftText">
+                    <h2 class="textrutaH2">Slutprojekt i DT163G</h2>
+                    <p>Denna webbplats är slutprojekt i kursen Digital Bildbehandling för webb på 7,5 poäng inom Webbutvecklingsprogrammet vid Mittuniversitetet.
+                    </p>
+                    <p>Fokus har legat på att fånga produkter och passande miljö på bild och film, och behandla dessa på lämpligt sätt för webben. Samtligt material är skapat av mig.</p>
+                    <a class="linkText" href="https://webbutveckling.miun.se/Om_programmet">Läs mer om programmet &rarr;</a>
+                </article>
+            </div>
+        </section>
+        <section>
+            <!-- Tredje bilden med kontakt till företaget -->
+            <div class="bakgrundsBild" id="kontakt">
+                <picture>
+                    <source media="(min-width: 701px) " srcset="Bilder/background/vingakerButikBg1920x650px.jpg">
+                    <img src="Bilder/background/vingakerButikBg700x450px.jpg" alt="Vingåker Bruks butik">
+                </picture>
+                <article class="rightText">
+                    <h2 class="textrutaH2">Besök oss i Vingåker</h2>
+                    <p>Vår butik hittar du på Vingåkervägen 18. Våra öppettider är:</p>
+                    <p>Måndag - Fredag: kl. 11-18</p>
+                    <p>Lördag & Söndag: kl. 11-15</p>
+                    <a class="linkText" href="about.html">Kontakta oss på e-post &rarr;</a>
+                </article>
+            </div>
+        </section>
+    </main>
+    <!-- Webbplatsens footer -->
+    <footer>
+        <!-- Bilden i bakgrunden -->
+        <div class="bakgrundsBild">
+            <picture>
+                <source media="(min-width: 701px) " srcset="Bilder/background/footerBg1920x737px.jpg">
+                <img src="Bilder/background/footerBg700x450px.jpg" alt="Vingåker Bruk">
+            </picture>
+            <!-- Länkar och text i footer -->
+            <div class="footerText ">
+                <ul>
+                    <li><a href="about.html">Om Vingåker Bruk</a></li>
+                    <li><a href="about.html#kontakt">Kontakta oss</a></li>
+                    <li><a href="about.html">FAQ</a></li>
+                </ul>
+                <i class="fa fa-envelope ikon socialIcon "></i>
+                <i class="fa fa-facebook-square ikon socialIcon "></i>
+                <i class="fa fa-pinterest-p ikon socialIcon "></i>
+                <p>&#169; Vingåker Bruk AB</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script src="Js/main.js"></script>
+    <script src="Js/burger.js"></script>
+</body>
+
+</html>

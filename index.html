@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vingåker Bruk | Hem</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="headerStyles.css">
+    <!-- Länkar för ikoner för Lightbox och annat samt css-filer för Lightbox. " -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/images/close.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/images/loading.gif" type="image/gif">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/images/next.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/images/prev.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+</head>
+
+<body>
+    <!-- Webbplatsens header -->
+    <header>
+        <!-- Header för mindre enheter -->
+        <div class="mobilNav">
+            <div id="mobilLogo">
+                <a href="index.html" title="Startsidan"><img src="Bilder/logotypMobil.svg" alt="Vingåker Bruk logo" width="90" height="70" class="logotyp"></a>
+            </div>
+            <!-- Hamburgarmenyns länkar (gömda per automatik) Källa: w3scools, "Hot TO - Mobile Navigation Menu", https://www.w3schools.com/howto/howto_js_mobile_navbar.asp Hämtad 2022-02-05-->
+            <nav id="myLinks">
+                <div class="datorSearch">
+                    <input type="text" placeholder="Sök produkt" id="searchProductMobil">
+                    <label for="searchProductMobil"><i class="fa searchIconMobil">&#xf002;</i></label>
+                </div>
+                <a href="index.html" class="active">Hem</a>
+                <a href="products.html">Produkter</a>
+                <a href="about.html">Om Vingåker Bruk</a>
+                <a href="about.html#kontakt">Kontakt</a>
+            </nav>
+            <!-- Ikon för att öppna och stänga hamburger menu -->
+            <img src="Bilder/burgerIcon.svg" class="menuIcon" onclick="openMenu()" alt="Öppna meny" width="30" height="73">
+        </div>
+        <!-- Varukorgen (samma för alla enheter) -->
+        <div id="varukorgContainer">
+            <div id="varukorgen">
+                <!-- Ikon för att öppna och stänga varukorgen -->
+                <picture>
+                    <source media="(min-width: 841px)" srcset="Bilder/varukorgSvart.svg">
+                    <img src="Bilder/varukorgMobil.svg" onclick="openCart()" title="Gå till varukorgen" alt="Varukorgen" width="30" height="30">
+                </picture>
+                <!--<img src="Bilder/varukorgMobil.svg" onclick="openCart()" title="Varukorgen" alt="Varukorgen" width="30" height="30">-->
+            </div>
+            <!-- Det som ligger i varukorgen -->
+            <div id="basket-holder">
+                <h2 class="varukorgH2">Din varukorg</h2>
+                <ul id="basket">
+                    <li>Varukorgen är tom</li>
+                </ul>
+                <!-- Länk för att komma till kassan -->
+                <a href="checkout.html" class="purchaseButton" title="Fortsätt till kassan">Fortsätt till kassan</a>
+                <button onclick="emptyBasket()" class="emptyButton">Töm varukorgen</button>
+            </div>
+        </div>
+        <!-- Header för större enheter -->
+        <div class="datorHeader">
+            <div id="datorLogo">
+                <a href="index.html" title="Startsidan"><img src="Bilder/logotyp.svg" alt="Vingåker Bruk logo" width="150" height="100"></a>
+            </div>
+            <div class="datorSearch">
+                <input type="text" placeholder="Sök produkt" id="searchProduct">
+                <label for="searchProduct"><i class="fa searchIcon">&#xf002;</i></label>
+            </div>
+            <!-- Meny för större enheter -->
+            <nav id="datorNav">
+                <ul>
+                    <li><a href="index.html" class="navActive">Hem</a></li>
+                    <li><a href="products.html">Produkter</a></li>
+                    <li><a href="about.html">Om Vingåker Bruk</a></li>
+                    <li><a href="about.html#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero-image">
+            <div class="bakgrundsBild">
+                <picture>
+                    <source media="(min-width: 701px) " srcset="Bilder/background/vingakerBg1920x650px.jpg">
+                    <img src="Bilder/background/vingakerBg700x450px.jpg" alt="">
+                </picture>
+                <div class="centerText">
+                    <h1 class="heroH1">Vingåker Bruk</h1>
+                    <p>Hållbar design & stilrena hantverk mitt i Upplands hjärta.</p>
+                    <p>Välkommen att upptäcka våra produkter, gjorda för att användas och älskas i generationer.</p>
+                    <a class="linkText" href="about.html">Läs mer om Vingåker Bruk &rarr;</a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Kategorier</h2>
+            <div class="kategorier">
+                <a href="products.html#keramik" title="Keramik"><img src="Bilder/categories/category02_600x150px.jpg" class="kategoriBild" alt="Keramik" width="600" height="150"></a>
+                <a href="products.html#glas" title="Glas"><img src="Bilder/categories/category03_600x150px.jpg" class="kategoriBild" alt="Glas" width="600" height="150"></a>
+                <a href="products.html#porslin" title="Porslin"><img src="Bilder/categories/category04_600x150px.jpg" class="kategoriBild" alt="Porslin" width="600" height="150"></a>
+            </div>
+        </section>
+        <section class="videowrapper">
+            <video width="1280" height="720" autoplay loop muted playsinline controls onclick="playPause()" id="reklamVid">
+            <source src="video/reklamfilm.mp4" type="video/mp4">
+            Din webbläsare har inte stöd för denna film.
+            </video>
+        </section>
+        <section>
+            <h2>Presenttips</h2>
+            <!-- Behållare med alla produktartiklar -->
+            <div class="produktContainer">
+                <!-- Artikel som innehåller bild och text om produkten -->
+                <article class="produktArtikel">
+                    <!-- Bild på produkten som är länk till produktsidan -->
+                    <div class="produktBild">
+                        <a href="hurubodaProduct01.html">
+                            <picture>
+                                <source srcset="Bilder/product01/product0101_400x500px.avif" type="image/avif">
+                                <img src="Bilder/product01/product0101_400x500px.jpg" alt="Huruboda vas" width="400" height="500">
+                            </picture>
+                        </a>
+                    </div>
+                    <!-- Info om produkten med länk till produktsidan samt möjlighet att lägga i varukorgen -->
+                    <div class="produktInfo">
+                        <h3>HURUBODA vas</h3>
+                        <p class="produktKortBeskrivning">HÖJD 25 CM, KERAMIK, BLÅ</p>
+                        <p class="pruduktPris">350 KR (inkl. moms)</p>
+                        <p class="produktLager">Finns i lager</p>
+                        <button class="buttonCart" onclick="addToBasket(this, '00101', 'Huruboda blå', 350, 'Bilder/product01/product0101_160x200px.jpg')" title="Lägg i varukorg"><img src="Bilder/varukorgPlus.svg " alt="" width="20" height="20">LÄGG I VARUKORG</button>
+                        <a class="buttonProduct " href="hurubodaProduct01.html">Läs mer om produkten &rarr;</a>
+                    </div>
+                </article>
+                <!-- Artikel som innehåller bild och text om produkten -->
+                <article class="produktArtikel">
+                    <!-- Bild på produkten som är länk till produktsidan -->
+                    <div class="produktBild">
+                        <a href="popglas.html">
+                            <picture>
+                                <source srcset="Bilder/product04/product0401_400x500px.avif" type="image/avif">
+                                <img src="Bilder/product04/product0401_400x500px.jpg" alt="POP glas" width="400" height="500">
+                            </picture>
+                        </a>
+                    </div>
+                    <!-- Info om produkten med länk till produktsidan samt möjlighet att lägga i varukorgen -->
+                    <div class="produktInfo">
+                        <h3>POP glas</h3>
+                        <p class="produktKortBeskrivning">HÖJD 8 CM, GLAS, RÖD</p>
+                        <p class="pruduktPris">120 KR (inkl. moms)</p>
+                        <p class="produktLager">Finns i lager</p>
+                        <button class="buttonCart" onclick="addToBasket(this, '00401', 'Pop', 120, 'Bilder/product04/product0401_160x200px.jpg')" title="Lägg i varukorg"><img src="Bilder/varukorgPlus.svg " alt="" width="20" height="20">LÄGG I VARUKORG</button>
+                        <a class="buttonProduct" href="popglas.html">Läs mer om produkten &rarr;</a>
+                    </div>
+                </article>
+                <!-- Artikel som innehåller bild och text om produkten -->
+                <article class="produktArtikel">
+                    <!-- Bild på produkten som är länk till produktsidan -->
+                    <div class="produktBild">
+                        <a href="lurbo.html">
+                            <picture>
+                                <source srcset="Bilder/product03/product0301_400x500px.avif" type="image/avif">
+                                <img src="Bilder/product03/product0301_400x500px.jpg" alt="Lurbo vas" width="400" height="500">
+                            </picture>
+                        </a>
+                    </div>
+                    <!-- Info om produkten med länk till produktsidan samt möjlighet att lägga i varukorgen -->
+                    <div class="produktInfo">
+                        <h3>LURBO vas</h3>
+                        <p class="produktKortBeskrivning">HÖJD 43 CM, KERAMIK, BLÅ</p>
+                        <p class="pruduktPris">450 KR (inkl. moms)</p>
+                        <p class="produktLager">Finns i lager</p>
+                        <button class="buttonCart" onclick="addToBasket(this, '00301', 'Lurbo', 450, 'Bilder/product03/product0301_160x200px.jpg')" title="Lägg i varukorg"><img src="Bilder/varukorgPlus.svg " alt="" width="20" height="20">LÄGG I VARUKORG</button>
+                        <a class="buttonProduct" href="lurbo.html">Läs mer om produkten &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+    <!-- Webbplatsens footer -->
+    <footer>
+        <!-- Bilden i bakgrunden -->
+        <div class="bakgrundsBild">
+            <picture>
+                <source media="(min-width: 701px) " srcset="Bilder/background/footerBg1920x737px.jpg">
+                <img src="Bilder/background/footerBg700x450px.jpg" alt="">
+            </picture>
+            <!-- Länkar och text i footer -->
+            <div class="footerText ">
+                <ul>
+                    <li><a href="about.html">Om Vingåker Bruk</a></li>
+                    <li><a href="about.html#kontakt">Kontakta oss</a></li>
+                    <li><a href="about.html">FAQ</a></li>
+                </ul>
+                <i class="fa fa-envelope ikon socialIcon "></i>
+                <i class="fa fa-facebook-square ikon socialIcon "></i>
+                <i class="fa fa-pinterest-p ikon socialIcon "></i>
+                <p>&#169; Vingåker Bruk AB</p>
+            </div>
+        </div>
+    </footer>
+    <script async src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script src="Js/main.js"></script>
+    <script async src="Js/burger.js"></script>
+</body>
+
+</html>

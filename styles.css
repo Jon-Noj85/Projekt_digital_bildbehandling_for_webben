@@ -1,0 +1,800 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Lite regler för hela dokumentet */
+
+body {
+    background-color: rgb(243, 243, 243);
+    font-family: Barlow, Helvetica, sans-serif;
+    line-height: 2em;
+    color: #2a2b2f;
+    background-color: #fff;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+
+/* Vanliga h1 utan bakgrundsbild */
+
+h1 {
+    margin: 3em 0 1em;
+    text-align: center;
+    padding: 1em 0 0;
+    font-size: 40px;
+    font-weight: 600;
+    font-family: Arvo, 'Open Sans', serif;
+}
+
+
+/* Dessa är h1 för de som har en bakgrundsbild */
+
+.heroH1 {
+    margin: 1em 0 0;
+    padding: 0;
+}
+
+
+/* Vanliga h2 utan bakgrundsbild */
+
+h2 {
+    padding: 2em 2em 1em;
+    font-size: 30px;
+    font-family: Arvo, 'Open Sans', serif;
+    margin: 0.5em;
+}
+
+
+/* h2 som har en bakgrundsbild */
+
+.textrutaH2 {
+    padding: 0.5em 0.8em;
+}
+
+
+/* h3 (mest produktnamn) */
+
+h3 {
+    padding: 0.5em;
+    font-size: 25px;
+}
+
+p {
+    font-size: 18px;
+    padding: 0.5em 2em;
+}
+
+
+/* woff2 är filformatet för typsnitt med bäst stöd enligt https://web.dev/learn/design/typography/ */
+
+
+/* Typsnitt för brödtext (sans-seriff) */
+
+@font-face {
+    font-family: Barlow;
+    src: url(barlow-v11-latin-regular.woff2) format('woff2');
+}
+
+
+/* Typsnitt för h1 och h2 (seriff)*/
+
+@font-face {
+    font-family: Arvo;
+    src: url(arvo-v14-latin-regular.woff2) format('woff2');
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Den bakgrundsbild som syns på enskilda produktsidor */
+
+.upprepadBakgrund {
+    background-image: url("Bilder/background/upprepadbakgrund2.jpg");
+    background-color: #fff;
+}
+
+
+/* Enskilda produktsidan, med margin så man ser den upprepade bakgrundsbilden till vänster och höger */
+
+.produktSida {
+    margin: 0 10%;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "produktNamn produktNamn" "produktbilder produktPres""produktbilder produktPres" "flerProdukter flerProdukter" "flerProdukter1 flerProdukter2";
+}
+
+.produktbilder {
+    grid-area: produktbilder;
+}
+
+
+/* Den största produktbilden*/
+
+.produktbild1 {
+    text-align: center;
+}
+
+.produktbild1 img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+
+/* De två mindre bilderna som ingår i lightbox */
+
+.thumbnails {
+    display: flex;
+    width: 100%;
+    justify-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.thumbnails img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+
+/* Inforutan om produkten på produktsidan */
+
+.produktPresentation {
+    grid-area: produktPres;
+    text-align: center;
+}
+
+
+/* h1 på produktsidan */
+
+.produktNamn {
+    padding-top: 2em;
+    grid-area: produktNamn;
+}
+
+
+/* h2 för produktsidor med produkter i fler färger */
+
+.flerProdukter {
+    grid-area: flerProdukter;
+}
+
+
+/* Den första färgen */
+
+#flerProdukter1 {
+    grid-area: flerProdukter1;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Den andra färgen */
+
+#flerProdukter2 {
+    grid-area: flerProdukter2;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* h3 för info om formgivaren på enskilda produktsidan */
+
+.infoformH3 {
+    text-align: start;
+    padding: 1em 1.4em;
+}
+
+
+/* Text för info om formgivaren */
+
+.infoform {
+    text-align: start;
+}
+
+
+/* Rekommendationer på textvidd från https://web.dev/learn/design/typography/ */
+
+article {
+    max-inline-size: 66ch;
+    line-height: 1.65;
+    text-align: start;
+}
+
+
+/* Bakgrundsbild som har en textruta franför sig */
+
+.bakgrundsBild {
+    width: 100%;
+    text-align: center;
+    height: auto;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: -12px;
+    overflow: hidden;
+}
+
+
+/* Textruta på bakgrundsbild som är centrerad */
+
+.centerText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    text-shadow: 1px 1px 2px #000;
+    color: white;
+    width: 600px;
+    border-radius: 1px;
+}
+
+
+/* Bild på mig på about-html */
+
+.centerText img {
+    float: right;
+    padding: 0.2em;
+}
+
+
+/* Textruta på bakgrundsbild som är till höger */
+
+.rightText {
+    position: absolute;
+    top: 150px;
+    right: 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 1px;
+}
+
+
+/* Textruta på bakgrundsbild som är till vänster */
+
+.leftText {
+    position: absolute;
+    top: 100px;
+    left: 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 1px;
+}
+
+
+/* Länkar som har text */
+
+.linkText {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    padding: 0.3em 1.8em;
+    margin: 0.5em auto;
+}
+
+
+/* När man har musen över länkarna */
+
+.linkText:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #c1c1c1;
+}
+
+.linkText:active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+/* Knappen för att lägga en vara i varukorgen */
+
+.buttonCart {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    padding: 0.3em;
+    margin: 0.6em;
+    background-color: rgba(4, 67, 37, 1.0);
+    font-size: 16px;
+    border: none;
+    justify-content: center;
+    align-content: center;
+    cursor: pointer;
+}
+
+.buttonCart:hover {
+    background-color: #2a2b2f;
+}
+
+.buttonCart:active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+/* Länk som tar en till den enskilda produktsidan */
+
+.buttonProduct {
+    display: inline-block;
+    text-decoration: none;
+    color: #2a2b2f;
+    padding: 0.3em;
+    margin: 0.5em auto;
+}
+
+.buttonProduct:hover {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(90, 90, 90);
+}
+
+
+/* Behållaren för produkartiklar på index.html och products.html */
+
+.produktContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+/* Enskild produktartikel som har tre produkter i rad på stora skärmar */
+
+.produktArtikel {
+    flex-basis: 30%;
+    margin: 0.5em;
+    grid-area: produktArtikel;
+}
+
+
+/* Produktbild i produktArtikel, som är responsiv */
+
+.produktBild img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Produktbilden får skugga vid mus över */
+
+.produktBild img:hover {
+    box-shadow: 2px 5px 10px #888;
+}
+
+.produktBild img a:active {
+    box-shadow: 2px 5px 10px #888;
+}
+
+
+/* Produktbildenrna på de enskilda produktsidorna får skugga vid mus över */
+
+.produktbilder img:hover {
+    box-shadow: 2px 5px 10px #888;
+}
+
+
+/* Behållare för info om produkten: pris, lagerinfo etc */
+
+.produktInfo {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0.2em 0;
+}
+
+
+/* Kort beskrivning av varje produkt: mått, material och färg */
+
+.produktKortBeskrivning {
+    font-size: 14px;
+}
+
+
+/* Pris för produkten */
+
+.pruduktPris {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* Om produkt finns i lager */
+
+.produktLager {
+    color: rgba(4, 67, 37, 1.0);
+    font-size: 16px;
+}
+
+
+/* Länk till enskilda produktsidan */
+
+.buttonProduct:hover {
+    opacity: 0.5;
+}
+
+footer {
+    text-align: center;
+}
+
+
+/* Sidfot text */
+
+.footerText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+
+/* Den sista raden i sidfoten behövde mycket margin för att göra bilden så hög som möjligt */
+
+footer p {
+    margin-top: 15em;
+}
+
+
+/* Länkarna i sidfoten */
+
+footer ul li a {
+    display: block;
+    text-decoration: none;
+    padding: 0.6em;
+    color: #2a2b2f;
+}
+
+footer ul li a:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/* Ikonerna i sidfoten */
+
+.socialIcon {
+    color: #2a2b2f;
+    padding: 1em;
+    z-index: 1;
+}
+
+.socialIcon:hover {
+    color: #fff;
+}
+
+
+/* Behållare för reklamfilmerna */
+
+.videowrapper {
+    background-color: #fff;
+    margin: 0 10%;
+}
+
+
+/* Videon centreras med rätt mått, och är responsiv */
+
+video {
+    width: 100%;
+    height: auto;
+    max-width: 1280px;
+    max-height: 720px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Behållare för de tre produktkategorierna: keramik, glas och porslin */
+
+.kategorier {
+    padding: 0 4%;
+    margin: 0 auto;
+}
+
+
+/* De tre bilderna för produktkategorierna, på stora skärmar ligger de bredvid varandra */
+
+.kategoriBild {
+    width: 33%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+    margin-right: -4px;
+    margin-bottom: 1em;
+}
+
+.kategoriBild:hover {
+    box-shadow: 2px 5px 10px #888;
+}
+
+
+/* Behållare för kassan, leverans etc */
+
+.kassan {
+    width: 100%;
+}
+
+
+/* Tabellen produkterna är listade i */
+
+table {
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+/* De små bilderna på produkterna är responsiva */
+
+table img {
+    width: 100%;
+    height: auto;
+}
+
+table thead tr td {
+    border-bottom: 1px solid #2a2b2f;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.leverans {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.leverans h3 {
+    margin: 2em 0 0.5em;
+    text-align: center;
+    border-top: 1px solid #2a2b2f;
+}
+
+
+/* Formuläret för leveransuppgifter */
+
+form {
+    text-align: center;
+}
+
+form input {
+    display: inline-block;
+    padding: 0.2em 0.3em;
+    margin: 0.5em;
+}
+
+fieldset {
+    border: none;
+}
+
+
+/* Kanppen för att koma till kassan i varukorgen */
+
+.purchaseButton {
+    display: flex;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border: 0;
+    background-color: #2a2b2f;
+    color: #fff;
+    font-size: 18px;
+    margin: 1.5em auto;
+    justify-content: center;
+    align-content: center;
+    cursor: pointer;
+}
+
+
+/* Knappen för att tömma varukorgen i varukorgen */
+
+.emptyButton {
+    display: flex;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border: 0;
+    background-color: #fff;
+    color: #000;
+    font-size: 18px;
+    margin: 0 auto;
+    justify-content: center;
+    align-content: center;
+    cursor: pointer;
+}
+
+
+/* Behållare för reklamremsan längst upp på products.html och checkout.html */
+
+.garanti {
+    background-color: rgba(4, 67, 37, 1.0);
+    color: #fff;
+    font-size: 16px;
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    margin-bottom: 2em;
+}
+
+.garanti ul {
+    list-style: none;
+    justify-items: center;
+    width: 100%;
+}
+
+.garanti ul li {
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}
+
+
+/* SVG-bilderna i reklamremsan */
+
+.garanti img {
+    margin: 0 0.3em -5px;
+}
+
+
+/* Regler för mindre skärmar (mest mindre margin/padding samt mindre textstorlek) */
+
+@media screen and (max-width: 700px) {
+    body {
+        line-height: 1.5em;
+    }
+    h1 {
+        padding: 1em;
+        padding-bottom: 1em;
+        margin: 3.5em 0 0.8em;
+        font-size: 25px;
+    }
+    .heroH1 {
+        margin: 1em 0 0.2em;
+        padding: 0;
+    }
+    h2 {
+        padding: 1em 1em 0.5em;
+        font-size: 18px;
+    }
+    .textrutaH2 {
+        margin: 0.5em 0 0.2em;
+        padding: 0 1.5em;
+    }
+    h3 {
+        font-size: 18px;
+        padding: 0.1em 0;
+        margin: 0.1em 0;
+    }
+    p {
+        font-size: 14px;
+    }
+    .kategorier {
+        padding: 0;
+        margin: 0 auto;
+    }
+    .kategoriBild {
+        width: 100%;
+        margin: 0 auto;
+        height: auto;
+        margin-top: -8px;
+    }
+    .produktContainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0 auto;
+    }
+    /* Istället för tre bilder på rad är det bara två */
+    .produktArtikel {
+        flex-basis: 50%;
+        justify-self: center;
+        margin: 0;
+    }
+    /* Ingen margin så bilden som upprepas i bakgrunden på produktsidorna syns inte */
+    .produktSida {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "produktNamn produktNamn""produktbilder produktbilder" "produktPres produktPres" "flerProdukter flerProdukter" "flerProdukter1 flerProdukter2";
+    }
+    .produktbilder {
+        padding-top: 0;
+        margin-top: -40px;
+        width: 100%;
+    }
+    .produktbild1 {
+        width: 100vw;
+    }
+    .produktPresentation {
+        text-align: center;
+    }
+    .produktKortBeskrivning {
+        padding: 0.1em;
+        padding-bottom: 0.5em;
+        font-size: 12px;
+    }
+    .pruduktPris {
+        padding: 0.2em;
+        font-size: 14px;
+    }
+    .produktLager {
+        font-size: 14px;
+    }
+    .linkText {
+        font-size: 14px;
+        padding: 0.8em 2em;
+        margin: 0;
+    }
+    .buttonProduct {
+        font-size: 14px;
+    }
+    .centerText {
+        max-width: 500px;
+        width: 80%;
+        top: 280px;
+        position: absolute;
+    }
+    .rightText {
+        position: absolute;
+        top: 40px;
+        width: 80%;
+    }
+    .leftText {
+        position: absolute;
+        top: 25px;
+        width: 80%;
+    }
+    .purchaseButton {
+        width: 80%;
+    }
+    .socialIcon {
+        padding: 0.5em;
+    }
+    .footerText ul li a {
+        padding: 0.2em;
+        width: 100%;
+    }
+    .videowrapper {
+        background-color: #fff;
+        margin: 0 auto;
+    }
+    .garanti {
+        font-size: 12px;
+    }
+    .garanti ul li {
+        justify-content: space-evenly;
+    }
+    .garanti img {
+        width: 15px;
+        height: 15px;
+        margin-bottom: -3px;
+    }
+    footer p {
+        margin-top: 15em;
+        padding: 0;
+    }
+    footer ul li a {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 701px) {
+    /* Kort beskrivning av varje produkt: mått, material och färg */
+    .produktKortBeskrivning {
+        font-size: 16px;
+    }
+}
